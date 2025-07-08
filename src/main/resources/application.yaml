@@ -1,0 +1,32 @@
+app:
+  jwt:
+    secret-key: "rUOugZS6xjj75a4e2xksfkBi1rv0h9Oo22wASIbY+i1Zf2nCPbwgjhPw2m+r1Zj4" #your-256-bit-secret-key-change-this-in-production
+    access-token-expiration: 900000 # 15 minutes
+    refresh-token-expiration: 2592000000 # 30 days
+    issuer: "Smart Home FPT"
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=SmartHome;encrypt=true;trustServerCertificate=true
+    username: sa
+    password: 123456789
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.SQLServerDialect
+  cache:
+    caffeine:
+      spec: maximumSize=1000,expireAfterWrite=1h
+
+zalo:
+  app:
+    id: 160423528199307215 # Đây là ID của Zalo App "Userinfor"
+    secret-key: QBNNDQNUOD34oE5TI6Qy # Đây là Khóa bí mật của Zalo App "Userinfor"
+  redirect-uri: zaloapp://app
+news:
+  api:
+    key: 474cc9de345a4e1ca713aaf4f1be01e5
+    base-url: https://newsapi.org/v2
