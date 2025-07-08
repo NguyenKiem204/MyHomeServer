@@ -87,7 +87,8 @@ public class SecurityConfig {
                         .requestMatchers("/api/service-fees/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/public/**").permitAll()
                         .requestMatchers("/api/admin/**").hasRole("ADMIN") // Đảm bảo dòng này được bảo vệ
-                        .requestMatchers("/api/building-services/**").hasAnyRole("USER", "ADMIN")
+//                        .requestMatchers("/api/building-services/**").hasAnyRole("USER", "ADMIN")
+                        .requestMatchers("/api/building-services/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/users/**").hasAnyRole("USER", "ADMIN")
                         .requestMatchers(HttpMethod.PUT, "/api/users/**").hasAnyRole("USER", "ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/api/users/**").hasRole("ADMIN")

@@ -1,14 +1,11 @@
 package com.kiemnv.SpringSecurityJWT.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime; // Import for LocalDateTime
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +26,9 @@ public class BuildingServiceDto {
     private String userCount;
     private String location;
     private String operatingHours;
+    private LocalDateTime createdAt; // Add createdAt
+    private LocalDateTime updatedAt; // Add updatedAt
+    private LocalDateTime publishedAt; // Add publishedAt
 
     public BuildingServiceDto(BuildingServiceDto other) {
         this.id = other.id;
@@ -43,5 +43,8 @@ public class BuildingServiceDto {
         this.userCount = other.userCount;
         this.location = other.location;
         this.operatingHours = other.operatingHours;
+        this.createdAt = other.createdAt;
+        this.updatedAt = other.updatedAt;
+        this.publishedAt = other.publishedAt;
     }
 }

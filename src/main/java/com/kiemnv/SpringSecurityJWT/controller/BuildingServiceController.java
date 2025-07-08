@@ -1,7 +1,7 @@
 package com.kiemnv.SpringSecurityJWT.controller;
 
 import com.kiemnv.SpringSecurityJWT.entity.BuildingServiceDto;
-import com.kiemnv.SpringSecurityJWT.entity.User;
+import com.kiemnv.SpringSecurityJWT.entity.User; // Ensure User class is correctly imported if used for SecurityContextHolder
 import com.kiemnv.SpringSecurityJWT.service.BuildingServiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
