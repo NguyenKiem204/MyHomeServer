@@ -83,6 +83,8 @@ public class SecurityConfig {
                         .requestMatchers("/api/feedback/**").permitAll()
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/api/news/**").permitAll()
+                        .requestMatchers("/api/blogs/**").permitAll()
+                        .requestMatchers("/api/service-fees/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/public/**").permitAll()
                         .requestMatchers("/api/admin/**").hasRole("ADMIN") // Đảm bảo dòng này được bảo vệ
                         .requestMatchers("/api/building-services/**").hasAnyRole("USER", "ADMIN")

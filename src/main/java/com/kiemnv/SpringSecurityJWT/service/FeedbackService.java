@@ -1,8 +1,7 @@
 package com.kiemnv.SpringSecurityJWT.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kiemnv.SpringSecurityJWT.dto.request.FeedbackRequest;
-import com.kiemnv.SpringSecurityJWT.dto.request.StrapiRequest;
+import com.kiemnv.SpringSecurityJWT.dto.request.StrapiFeedbackRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -28,15 +27,15 @@ public class FeedbackService {
             headers.set("Accept-Encoding", "gzip, deflate, br");
             headers.set("Connection", "keep-alive");
 
-            StrapiRequest.FeedbackData data = new StrapiRequest.FeedbackData(
+            StrapiFeedbackRequest.FeedbackData data = new StrapiFeedbackRequest.FeedbackData(
                     request.getType(),
                     request.getTitle(),
                     request.getContent(),
                     request.getPhoneNumber()
             );
-            StrapiRequest strapiRequest = new StrapiRequest(data);
+            StrapiFeedbackRequest strapiRequest = new StrapiFeedbackRequest(data);
 
-            HttpEntity<StrapiRequest> entity = new HttpEntity<>(strapiRequest, headers);
+            HttpEntity<StrapiFeedbackRequest> entity = new HttpEntity<>(strapiRequest, headers);
 
             ResponseEntity<String> response = restTemplate.exchange(
                     STRAPI_URL, HttpMethod.POST, entity, String.class
